@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+Contact
+{% endblock %}
+
+{% block page_head %}
+Contact Form
+{% endblock %}
+
+{% block page_content %}
+
+{% if not submitted %}
+
+<form method="post">
+
+    <p>
+        First Name:
+        <input type="text" name="first_name">
+    </p>
+
+    <p>
+        Last name:
+        <input type="text" name="last_name">
+    </p>
+
+    <p>
+        Email Address:
+        <input type="email" name="email">
+    </p>
+
+    <p>
+        Major:
+        <input type="text" name="major">
+    </p>
+
+    <input type="submit" value="Submit" class="btn btn-primary">
+
+</form>
+
+{% else %}
+
+    <h1>Thank you!</h1>
+
+    <p>Thank you for completing the form!</p>
+
+    <p>First Name: {{ first_name }}</p>
+
+    <p>Last Name: {{ last_name }}</p>
+
+    <p>Email: {{ email }}</p>
+
+    <p>Major: {{ major }}</p>
+
+{% endif %}
+
+{% endblock %}
